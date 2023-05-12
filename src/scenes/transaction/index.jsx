@@ -19,7 +19,7 @@ const Transactions = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/transaction")
+    axios.get("https://hardy-mind-production.up.railway.app/transaction")
       .then((res) => {
         if (res.data.success) {
           setTx(res.data.data);
@@ -105,7 +105,7 @@ const Transactions = () => {
 
   const handleFormSubmit = async(values) => {
     try {
-      const transaction = await axios.post("http://localhost:5000/transaction", values);
+      const transaction = await axios.post("https://hardy-mind-production.up.railway.app/transaction", values);
       const response = transaction.data;
       if (response.success) {
         NotificationManager.success('Success', 'Success add transaction', 3000);

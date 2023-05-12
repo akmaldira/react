@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleFormSubmit = async(values) => {
     try {
-      const login = await axios.post("http://localhost:5000/login", values);
+      const login = await axios.post("https://hardy-mind-production.up.railway.app/login", values);
       const response = login.data;
   
       if (response.success) {
